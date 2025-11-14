@@ -9,6 +9,8 @@ while run:
     print("Avsluta programmet [Q]🥲")
     print("ta bort saker från inventory[D]")
     print("Sök efter saker i påsen [F]")
+    print("Rensa påsen [R]")
+    print("visa antal saker i påsen [C]")
     choice = input("Välj: ")
     if choice.lower() == "v":
         if not bag:
@@ -27,6 +29,11 @@ while run:
             print(f"hittade: {query} i påsen")
         else:
             print(f"du sökte efter {query}, men det finns inte i påsen")
+    elif choice.lower() == "r":
+        bag.clear()
+        print("du tömde påsen")
+    elif choice.lower() == "c":
+        print("antal saker i påsen är:", len(bag))
     elif choice.lower() == "d":
         if not bag: 
             print("påsen är tom")
